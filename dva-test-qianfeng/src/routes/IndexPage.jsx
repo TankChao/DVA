@@ -36,6 +36,7 @@ class IndexPage extends React.Component {
       <div>我是首页
         <div>{this.props.msg}</div>
         <div>{this.props.name}</div>
+        <div>{this.props.tank}</div>
         <button onClick={this.handleSetName}>setName</button>
         <button onClick={this.setNameAsync}>setNameAsync</button>
         <button onClick={this.testCnode}>testCnode</button>
@@ -45,11 +46,12 @@ class IndexPage extends React.Component {
 }
 const mapStateToProps = state => {
   // state 就是 models 里面的 state
-  //console.log(state)
+  console.log(state)
   return {
     msg: "我爱北京天安门",
     name: state.indexTest.name,
-    cnodeData: state.indexTest.cnodeData
+    cnodeData: state.indexTest.cnodeData,
+    tank: state.example.tank
   }
 }
 export default connect(mapStateToProps)(IndexPage);
